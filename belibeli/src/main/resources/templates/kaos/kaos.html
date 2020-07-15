@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Welcome To Belibeli</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style type="text/css">
+footer {
+	padding: 10px;
+	color: white;
+	background-color: #00a2c6;
+	text-align: center;
+	font-weight: bold;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	bottom: 0px;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#container {
+	min-height: 100%;
+	position: relative;
+}
+
+#header {
+	background: #00a2c6;
+	padding: 0px;
+}
+
+#body {
+	padding: 10px;
+	padding-bottom: 60px; /* sesuaikan dengan tinggi footer */
+}
+</style>
+
+</head>
+
+<body>
+
+	<div id="container">
+		<div id="header">
+			<div class=" p-3 my-3 bg-primary text-white">
+				<h1 align="center">Welcome To BeliBeli</h1>
+				<p align="center">Good Quality, Good Service and Trusted</p>
+				<div class="container">
+					<ul class="nav">
+						<li class="bg-danger text-white"><a
+							class="nav-link text-white" th:href="@{/}">Home</a></li>
+						<li class="bg-danger text-white"><a
+							class="nav-link text-white" th:href="@{/sepatu/}">Sepatu</a></li>
+						<li class="bg-danger text-white"><a
+							class="nav-link text-white" th:href="@{/kaos/}">Kaos</a></li>
+						<li class="bg-danger text-white"><a
+							class="nav-link text-white" th:href="@{/accesories/}">Accesories</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div id="body">
+			<div class="container">
+				<h3>Data Kaos Belibeli</h3>
+				<button type="button" class="btn btn-primary">
+					<a class="text-white" th:href="@{/kaos/insert}">Insert</a>
+				</button>
+				<br> <br>
+				<table class="table table-dark table-striped" border="1">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Merk</th>
+							<th>Name Product</th>
+							<th>Date</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Description</th>
+							<th>Choice</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="kaosModel:${listKaos}">
+							<td th:text="${kaosModel.id}"></td>
+							<td th:text="${kaosModel.merk}"></td>
+							<td th:text="${kaosModel.name}"></td>
+							<td th:text="${kaosModel.date}"></td>
+							<td th:text="${kaosModel.quantity}"></td>
+							<td th:text="${kaosModel.price}"></td>
+							<td th:text="${kaosModel.description}"></td>
+							<td><button type="button" class="btn btn-warning">
+									<a class="text-white"
+										th:href="@{'/kaos/edit/' + ${kaosModel.id}}">Update</a>
+								</button>
+								<button type="button" class="btn btn-danger">
+									<a class="text-white"
+										th:href="@{'/kaos/delete/' + ${kaosModel.id}}">Delete</a>
+								</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<footer>
+			<p>Irianto Lumban Gaol &copy;2020, Irianto Collection</p>
+		</footer>
+
+	</div>
+</body>
+
+</html>

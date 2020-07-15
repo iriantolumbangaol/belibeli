@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beli Beli</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div class="container p-3 my-3 bg-primary text-white">
+		<h1 align="center">Welcome To Irianto Collection</h1>
+		<p align="center">
+			Good Quality, Good Service and Trusted <br>
+		</p>
+		<div class="container">
+			<ul class="nav">
+				<li class="bg-danger text-white"><a class="nav-link text-white"
+					th:href="@{/}">Home</a></li>
+				<li class="bg-danger text-white"><a class="nav-link text-white"
+					th:href="@{/sepatu/}">Sepatu</a></li>
+				<li class="bg-danger text-white"><a class="nav-link text-white"
+					th:href="@{/kaos/}">Kaos</a></li>
+				<li class="bg-danger text-white"><a class="nav-link text-white"
+					th:href="@{/accesories/}">Accesories</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container">
+		<h1>Shoes Collection</h1>
+		<p>Insert New Kaos Collection</p>
+		<br>
+		<form th:action="@{/kaos/save}" th:object="${kaosModel}" method="post">
+
+			<div class="form-group">
+				<label for="usr">Insert ID:</label> <input type="text"
+					class="form-control" name="id" required="required">
+			</div>
+
+			<div class="form-group">
+				<label for="sel1">Select Merk (select one):</label> <select
+					class="form-control" id="sel1" name="merk" required="required">
+					<option value="Erigo">Erigo</option>
+					<option value="Oomaoo">Oomaoo</option>
+					<option value="SANS">SANS</option>
+					<option value="Kamengski">Kamengski</option>
+				</select>
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Insert Name Product:</label> <input type="text"
+					class="form-control" name="name" required="required">
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Date:</label> <input type="date"
+					class="form-control" name="date" required="required">
+
+				<div class="form-group">
+					<label for="usr">Insert Quantity:</label> <input type="number"
+						class="form-control" name="quantity" required="required">
+				</div>
+
+				<div class="form-group">
+					<label for="usr">Insert Price:</label> <input type="number"
+						class="form-control" name="price" required="required">
+				</div>
+
+				<div class="form-group">
+					<label for="comment">Insert Description:</label>
+					<textarea class="form-control" rows="5" id="comment"
+						name="description" required="required"></textarea>
+				</div>
+
+
+
+				<button type="submit" class="btn btn-success">Save</button>
+
+				<button type="reset" class="btn btn-secondary">Reset</button>
+		</form>
+
+		<br> <br> <br>
+
+		<footer style="background-color: green">
+
+			<div class="container text-white">
+				<div class="row">
+					<div class="col-sm-4">
+						<h3>
+							<a th:href="@{/sepatu/}">Sepatu</a>
+						</h3>
+						<p>Sepatu dalam negeri, kualitas jauh diatas luar negeri</p>
+						<p>Diskon untuk hari ini 25%</p>
+					</div>
+					<div class="col-sm-4">
+						<h3>
+							<a th:href="@{/kaos/}">Kaos</a>
+						</h3>
+						<p>Bahan enak, terjamin kualitasnya, adem</p>
+						<p>Cinta balang - balang dalam negeli</p>
+					</div>
+					<div class="col-sm-4">
+						<h3>
+							<a href="#">Accesories</a>
+						</h3>
+						<p>Perintilan - perintilan manja</p>
+						<p>Dalam negeri, Mantap pisann...</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+</body>
+
+</html>
