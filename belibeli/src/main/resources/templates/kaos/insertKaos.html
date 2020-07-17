@@ -38,13 +38,8 @@
 		<form th:action="@{/kaos/save}" th:object="${kaosModel}" method="post">
 
 			<div class="form-group">
-				<label for="usr">Insert ID:</label> <input type="text"
-					class="form-control" name="id" required="required">
-			</div>
-
-			<div class="form-group">
 				<label for="sel1">Select Merk (select one):</label> <select
-					class="form-control" id="sel1" name="merk" required="required">
+					class="form-control" id="sel1" name="merk" >
 					<option value="Erigo">Erigo</option>
 					<option value="Oomaoo">Oomaoo</option>
 					<option value="SANS">SANS</option>

@@ -24,11 +24,11 @@ public class AccesoriesService {
 		return this.accesoriesRepository.findAll();
 	}
 	
-	public void delete(String id) {
+	public void delete(int id) {
 		accesoriesRepository.deleteById(id);
 	}
 	
-	public AccesoriesModel get(String id) {
+	public AccesoriesModel get(int id) {
 		return accesoriesRepository.findById(id).get();
 	}
 

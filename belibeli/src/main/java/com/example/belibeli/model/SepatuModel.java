@@ -4,16 +4,21 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.boot.autoconfigure.web.ResourceProperties.Strategy;
 
 @Entity
 @Table(name="sepatu")
 public class SepatuModel {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id")
-	private String id;
+	private int id;
 	
 	@Column(name="merk")
 	private String merk;
@@ -34,6 +39,14 @@ public class SepatuModel {
 	private Date date;
 
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -48,14 +61,6 @@ public class SepatuModel {
 
 	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getMerk() {

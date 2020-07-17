@@ -14,8 +14,9 @@ import javax.persistence.Table;
 public class KaosModel {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="id")
-	private String id;
+	private int id;
 	
 	@Column(name="name")
 	private String name;
@@ -35,6 +36,14 @@ public class KaosModel {
 	@Column(name="date")
 	private Date date;
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -42,15 +51,7 @@ public class KaosModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
+	
 	public String getMerk() {
 		return merk;
 	}

@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.belibeli.model.SepatuModel;
 
-public interface SepatuRepository extends JpaRepository<SepatuModel, String> {
+public interface SepatuRepository extends JpaRepository<SepatuModel, Integer> {
 
 }

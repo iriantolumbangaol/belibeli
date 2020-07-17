@@ -25,11 +25,11 @@ public class KaosService {
 		return this.kaosRepository.findAll();
 	}
 	
-	public void delete(String id) {
+	public void delete(int id) {
 		kaosRepository.deleteById(id);
 	}
 	
-	public KaosModel get(String id) {
+	public KaosModel get(int id) {
 		return kaosRepository.findById(id).get();
 	}
 

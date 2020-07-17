@@ -25,11 +25,11 @@ public class SepatuService {
 		return this.sepatuRepository.findAll();
 	}
 	
-	public void delete(String id) {
+	public void delete(int id) {
 		sepatuRepository.deleteById(id);
 	}
 	
-	public SepatuModel get(String id) {
+	public SepatuModel get(int id) {
 		return sepatuRepository.findById(id).get();
 	}
 

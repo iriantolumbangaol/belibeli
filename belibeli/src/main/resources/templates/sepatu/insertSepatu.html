@@ -14,7 +14,9 @@
 <body>
 	<div class="container p-3 my-3 bg-primary text-white">
 		<h1 align="center">Welcome To Irianto Collection</h1>
-		<p align="center">Good Quality, Good Service and Trusted <br></p>
+		<p align="center">
+			Good Quality, Good Service and Trusted <br>
+		</p>
 		<div class="container">
 			<ul class="nav">
 				<li class="bg-danger text-white"><a class="nav-link text-white"
@@ -33,13 +35,9 @@
 		<h1>Shoes Collection</h1>
 		<p>Insert New Shoes Collection</p>
 		<br>
-		<form th:action="@{/sepatu/save}" th:object="${sepatuModel}"  method="post">
-		
-			<div class="form-group">
-				<label for="usr">Insert ID:</label> <input type="text"
-					class="form-control" name="id" required="required">
-			</div>
-			
+		<form th:action="@{/sepatu/save}" th:object="${sepatuModel}"
+			method="post">
+
 			<div class="form-group">
 				<label for="sel1">Select Merk (select one):</label> <select
 					class="form-control" id="sel1" name="merk" required="required">
@@ -49,36 +47,35 @@
 					<option value="Nah Project">Nah Project</option>
 				</select>
 			</div>
-			
+
 			<div class="form-group">
 				<label for="usr">Insert Name Product:</label> <input type="text"
 					class="form-control" name="name">
 			</div>
-			
+
 			<div class="form-group">
 				<label for="usr">Date:</label> <input type="date"
 					class="form-control" name="date" required="required">
-			
-			<div class="form-group">
-				<label for="usr">Insert Quantity:</label> <input type="number"
-					class="form-control" name="quantity" required="required">
-			</div>
-			
-			<div class="form-group">
-				<label for="usr">Insert Price:</label> <input type="number"
-					class="form-control" name="price">
-			</div>
-			
-			<div class="form-group">
-				<label for="comment">Insert Description:</label>
-				<textarea class="form-control" rows="5" id="comment"
-					name="description" required="required"></textarea>
-			</div>
 
-			<button type="submit" class="btn btn-success">Save</button>
+				<div class="form-group">
+					<label for="usr">Insert Quantity:</label> <input type="number"
+						class="form-control" name="quantity" required="required">
+				</div>
 
-			<button type="reset" class="btn btn-secondary">Reset</button>
+				<div class="form-group">
+					<label for="usr">Insert Price:</label> <input type="number"
+						class="form-control" name="price">
+				</div>
 
+				<div class="form-group">
+					<label for="comment">Insert Description:</label>
+					<textarea class="form-control" rows="5" id="comment"
+						name="description" required="required"></textarea>
+				</div>
+
+				<button type="submit" class="btn btn-success">Save</button>
+
+				<button type="reset" class="btn btn-secondary">Reset</button>
 		</form>
 
 		<br> <br> <br>
